@@ -1,0 +1,1 @@
+likes(jeremy, test).
