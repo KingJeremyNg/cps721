@@ -1,3 +1,32 @@
+/*
+hasAccount(Person, Bank, Amount).
+lives(Person, City).
+created(Person, Bank, Month, Year).
+*/
+
+created(ann, mcu, 1, 2020).
+created(joy, rbc, 8, 2019).
+created(jeremy, rbc, 6, 2019).
+created(jeremy, td, 6, 2019).
+created(steve, td, 3, 2017).
+created(steve, rbc, 8, 2017).
+created(bob, bmo, 4, 2010).
+created(bob, nbc, 3, 2012).
+
+lives(steve, quebec).
+lives(jose, nyc).
+lives(eli, nyc).
+lives(linh, nyc).
+
+hasAccount(bob, bmo, 1000).
+hasAccount(bob, nbc, 1000).
+hasAccount(steve, td, 2000).
+hasAccount(jeremy, rbc, 1200).
+hasAccount(jeremy, td, 800).
+hasAccount(jose, bofa, 1001).
+hasAccount(eli, bofa, 1002).
+hasAccount(linh, bofa, 9999).
+
 % 1. When did Ann open her account at Metro Credit Union?
 ?- created(ann, mcu, Month, Year).
 
