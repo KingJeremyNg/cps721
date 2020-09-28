@@ -1,0 +1,250 @@
+/*
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+*/
+
+[eclipse 2]: [accounts].
+accounts.pl compiled 5824 bytes in 0.01 seconds
+
+Yes (0.01s cpu)
+# 1.
+[eclipse 3]: ?-  created(ann, mcu, Month, Year).
+
+Month = 1
+Year = 2020
+Yes (0.00s cpu)
+# 2.
+[eclipse 4]: ?-  hasAccount(X, bmo, Amount1), hasAccount(X, nbc, Amount2).	
+
+X = bob
+Amount1 = 1000
+Amount2 = 1000
+Yes (0.00s cpu)
+# 3.
+[eclipse 5]: ?-  lives(X, Location), hasAccount(X, td, Amount), 
+    not Location = toronto.		
+
+X = steve
+Location = quebec
+Amount = 2000
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+X = jeremy
+Location = china
+Amount = 800
+Yes (0.00s cpu, solution 2)
+
+# 4. 
+[eclipse 6]: ?- created(X, rbc, 8, 2019).
+
+X = joy
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)
+# 5.
+[eclipse 7]: ?-  created(X, Y, 6, 2019),
+    created(X, Z, 6, 2019),
+    hasAccount(X, Y, AmountY),
+    hasAccount(X, Z, AmountZ),
+    AmountY < 1500,
+    AmountZ < 1500,
+    not Y = Z.						
+
+X = jeremy
+Y = rbc
+Z = td
+AmountY = 1200
+AmountZ = 800
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+X = jeremy
+Y = td
+Z = rbc
+AmountY = 800
+AmountZ = 1200
+Yes (0.00s cpu, solution 2, maybe more) ? ;
+
+No (0.00s cpu)
+# 6.
+[eclipse 8]: ?-  lives(X, nyc),
+    lives(Y, nyc),
+    lives(Z, nyc),
+    hasAccount(X, Bank, AmountX),
+    hasAccount(Y, Bank, AmountY),
+    hasAccount(Z, Bank, AmountZ),
+    AmountX > 1000,
+    AmountY > 1000,
+    AmountZ > 1000,
+    not X = Y,
+    not Y = Z,
+    not X = Z.									
+
+X = jose
+Y = eli
+Z = linh
+Bank = bofa
+AmountX = 1001
+AmountY = 1002
+AmountZ = 9999
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+X = jose
+Y = linh
+Z = eli
+Bank = bofa
+AmountX = 1001
+AmountY = 9999
+AmountZ = 1002
+Yes (0.00s cpu, solution 2, maybe more) ? ;
+
+X = eli
+Y = jose
+Z = linh
+Bank = bofa
+AmountX = 1002
+AmountY = 1001
+AmountZ = 9999
+Yes (0.00s cpu, solution 3, maybe more) ? ;
+
+X = eli
+Y = linh
+Z = jose
+Bank = bofa
+AmountX = 1002
+AmountY = 9999
+AmountZ = 1001
+Yes (0.00s cpu, solution 4, maybe more) ? ;
+
+X = linh
+Y = jose
+Z = eli
+Bank = bofa
+AmountX = 9999
+AmountY = 1001
+AmountZ = 1002
+Yes (0.00s cpu, solution 5, maybe more) ? ;
+
+X = linh
+Y = eli
+Z = jose
+Bank = bofa
+AmountX = 9999
+AmountY = 1002
+AmountZ = 1001
+Yes (0.00s cpu, solution 6, maybe more) ? ;
+
+No (0.00s cpu)
+# 7.
+[eclipse 9]: ?-  lives(X, Location),
+    created(X, Bank1, Month1, Year),
+    created(X, Bank2, Month2, Year),
+    not Location = toronto,
+    not Bank1 = Bank2.				
+
+X = steve
+Location = quebec
+Bank1 = td
+Month1 = 3
+Year = 2017
+Bank2 = rbc
+Month2 = 8
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+X = steve
+Location = quebec
+Bank1 = rbc
+Month1 = 8
+Year = 2017
+Bank2 = td
+Month2 = 3
+Yes (0.01s cpu, solution 2, maybe more) ? ;
+
+X = jeremy
+Location = china
+Bank1 = rbc
+Month1 = 6
+Year = 2019
+Bank2 = td
+Month2 = 6
+Yes (0.01s cpu, solution 3, maybe more) ? ;
+
+X = jeremy
+Location = china
+Bank1 = td
+Month1 = 6
+Year = 2019
+Bank2 = rbc
+Month2 = 6
+Yes (0.01s cpu, solution 4, maybe more) ? ;
+
+No (0.01s cpu)
+# 8.
+[eclipse 10]: ?-  created(X, Bank1, Month1, Year1),
+    created(X, Bank2, Month2, Year2),
+    hasAccount(X, Bank1, Amount),
+    hasAccount(X, Bank2, Amount),
+    not Year1 = Year2.				
+
+X = bob
+Bank1 = bmo
+Month1 = 4
+Year1 = 2010
+Bank2 = nbc
+Month2 = 3
+Year2 = 2012
+Amount = 1000
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+X = bob
+Bank1 = nbc
+Month1 = 3
+Year1 = 2012
+Bank2 = bmo
+Month2 = 4
+Year2 = 2010
+Amount = 1000
+Yes (0.00s cpu, solution 2, maybe more) ? ;
+
+No (0.00s cpu)
+# 9.
+ ?-  lives(Person1, toronto),
+    created(Person1, cibc, Month1, Year1),
+    not (lives(Person2, toronto), created(Person2, cibc, Month2, Year2), Year1 > Year2),
+    not (lives(Person2, toronto), created(Person2, cibc, Month2, Year2), Year1 = Year2, Month1 > Month2).
+			
+Person1 = adam
+Month1 = 10
+Year1 = 1996
+Person2 = Person2
+Month2 = Month2
+Year2 = Year2
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)
+# 10.
+[eclipse 12]: ?-  lives(Person1, Location1),
+    Location1 \= toronto,
+    hasAccount(Person1, Bank1, Amount1),
+    not (lives(PersonA, LocationA), hasAccount(PersonA, BankA, AmountA), LocationA \= toronto, Amount1 < AmountA),
+    lives(PersonA, LocationA),
+    LocationA \= toronto,
+    hasAccount(PersonA, BankA, AmountA),
+    Person1 \= PersonA,
+    not (lives(PersonB, LocationB), hasAccount(PersonB, BankB, AmountB), Person1 \= PersonB, PersonA \= PersonB, LocationB \= toronto, AmountA < AmountB).	
+
+Person1 = linh
+Location1 = nyc
+Bank1 = bofa
+Amount1 = 9999
+PersonA = xing
+LocationA = quebec
+BankA = scotia
+AmountA = 5000
+PersonB = PersonB
+LocationB = LocationB
+BankB = BankB
+AmountB = AmountB
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)

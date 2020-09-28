@@ -1,0 +1,82 @@
+/*
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+*/
+
+[eclipse 15]: [taxonomy].
+File taxonomy.pl, line 19: Singleton variable Y
+File taxonomy.pl, line 19: Singleton variable Z
+File taxonomy.pl, line 31: Singleton variable Y
+File taxonomy.pl, line 33: Singleton variable X
+File taxonomy.pl, line 35: Singleton variable X
+File taxonomy.pl, line 35: Singleton variable Y
+taxonomy.pl compiled 6056 bytes in 0.01 seconds
+
+Yes (0.01s cpu)
+#1. leaf(X) :- isaLink(X, Y), not isaLink(Z, X).
+[eclipse 17]: leaf(goldenRetriever).
+
+Yes (0.00s cpu)
+[eclipse 18]: leaf(mammal).
+
+No (0.00s cpu)
+#2. sibling(X, Y) :- isaLink(X, Z), isaLink(Y, Z), X \= Y.
+[eclipse 20]: sibling(dog, cat).
+
+Yes (0.00s cpu)
+[eclipse 21]: sibling(retreiver, cat).
+
+No (0.00s cpu)
+#3. grandParent(X, Y) :- isaLink(X, Z), isaLink(Z, Y).
+[eclipse 31]: grandParent(tabby,mammal).
+
+Yes (0.00s cpu)
+[eclipse 32]: grandParent(tabby, cat).
+
+No (0.00s cpu)
+#4. isa(X, Y) :- X = Y.
+isa(X, Y) :- isaLink(X, Y).
+isa(X, Y) :- isaLink(X, Z), isa(Z, Y).
+
+[eclipse 28]: isa(goldenRetriever,mammal).
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+Yes (0.00s cpu, solution 2, maybe more) ? ;
+
+No (0.00s cpu)
+[eclipse 29]: isa(robin,bird).
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+Yes (0.00s cpu, solution 2, maybe more) ? ;
+
+No (0.00s cpu)
+[eclipse 30]: isa(shark,reptile).
+
+No (0.00s cpu)
+#5. mostSpecificSubsumer(X, Y, Z) :- isaLink(X, Z), Y = Z.
+mostSpecificSubsumer(X, Y, Z) :- isaLink(Y, Z), X = Z.
+mostSpecificSubsumer(X, Y, Z) :- isaLink(X, Z), isaLink(Y, Z), X \= Y.
+mostSpecificSubsumer(X, Y, Z) :- isaLink(X, Z), isaLink(Y, B), X \= Y, Z \= B, mostSpecificSubsumer(X, B, Z).
+mostSpecificSubsumer(X, Y, Z) :- isaLink(X, A), isaLink(Y, Z), X \= Y, A \= Z, mostSpecificSubsumer(A, Y, Z).
+mostSpecificSubsumer(X, Y, Z) :- isaLink(X, A), isaLink(Y, B), X \= Y, A \= B, mostSpecificSubsumer(A, B, Z).
+
+[eclipse 31]: ?- mostSpecificSubsumer(poodle, cat, mammal).
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+Yes (0.00s cpu, solution 2, maybe more) ? ;
+
+No (0.00s cpu)
+[eclipse 32]: ?- mostSpecificSubsumer(retriever, robin, mammal).
+
+No (0.00s cpu)
+[eclipse 33]: ?- mostSpecificSubsumer(goldenRetriever, emperorPenguin, animal).
+
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+Yes (0.00s cpu, solution 2, maybe more) ? ;
+
+No (0.00s cpu)

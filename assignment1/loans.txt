@@ -1,0 +1,40 @@
+/*
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+*/
+
+Alice (#1), expected risk: high
+?- risk(alice, X).
+X = high
+Yes (0.00s cpu, solution 1, maybe more)
+
+Bob (#3), expected risk: moderate
+?- risk(bob, X).
+X = moderate
+Yes (0.00s cpu, solution 1, maybe more)
+
+Cherry (#5), expected risk: low
+?- risk(cherry, X).
+X = low
+Yes (0.00s cpu, solution 1, maybe more)
+
+David (#7), expected risk: high
+?- risk(david, X).
+X = high
+Yes (0.00s cpu, solution 1, maybe more)
+
+Edward (#9), expected risk: low
+?- risk(edward, X).
+X = low
+Yes (0.00s cpu, solution 1, maybe more)
+
+Franklin (#11), expected risk: high
+?- risk(franklin, X).
+X = high
+Yes (0.00s cpu, solution 1, maybe more)
+
+George (#13), expected risk: low
+?- risk(george, X).
+X = low
+Yes (0.00s cpu)
