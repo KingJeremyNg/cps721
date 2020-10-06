@@ -1,0 +1,46 @@
+1.  [X | [ Y, [a, Y]]] and [a, b, [X | [Y]]]
+    [X, Y, [a, Y]] and [a, b, [X, Y]]
+    X = a, Y = b
+    Yes, by simplifying the initial statements we can find the same pattern.
+
+2.  [X, [a, Y | V]] and [V, [X, d, a]]
+    [X, [a, Y, V]] and [V, [X, d, a]]
+    X = a, V = a, Y = d
+    Yes, by simplifying the initial statements we can find a similar pattern.
+
+3.  [[q, p | [r, s]], []] and [X | Y]
+    [[q, p, r, s], []] and [X | Y]
+    X = [q, p, r, s]
+    Y = []
+    Yes, by simplifying the LHS, we get a list of 2 elements which matches [X | Y].
+
+4.  [[w, a, r],[r, a, n, t]] and [[X | [Y | [Z]]] | [[Z | W]]]
+    [[w, a, r],[r, a, n, t]] and [[X | [Y, Z]], [Z | W]]
+    [[w, a, r],[r, a, n, t]] and [[X, Y, Z], [Z | W]]
+    X = w, Y = a, Z = r, W = [a, n, t]
+    Yes, by simplifying the RHS. We transform the bar notation to comma notation.
+    [Z | W] can not transform into [Z, W] because W potentially contains multiple elements.
+
+5.  [l, a, m, b, [d,a]] and [X, Y | [V, W | [Z, X]]]
+    [l, a, m, b, [d,a]] and [X, Y | [V, W, Z, X]]
+    [l, a, m, b, [d,a]] and [X, Y, V, W, Z, X]
+    No, because there is a mismatch in the number of elements in the list.
+    LHS has 5 elements while RHS has 6.
+
+6.  [cps109, mth110 | [X | []]] and [P | [Q, [pcs110] | S]]
+    [cps109, mth110 | [X]] and [P, Q, [pcs110] | S]
+    [cps109, mth110, X] and [P, Q, [pcs110] | S]
+    P = cps109, Q = mth110, X = [pcs110], S = []
+    Yes, because [a, b, c] = [a, b, c | []]
+
+7.  [P, a, a | [d, P | R]] and [[a, b, c] | [X, Y, Z]]
+    [P, a, a, d, P | R] and [[a, b, c], X, Y, Z]
+    No, because LHS has at least 5 elements while RHS has 4.
+
+8.  [b, U, V | W] and [V | [[c, V] | [b | U]]]
+    [b, U, V | W] and [V, [c, V] | [b | U]]
+    [b, U, V | W] and [V, [c, V], b | U]
+    
+    Let U = [c, b], W = [c, b], V = b
+    [b, [c, b], b | [c, b]] and [b, [c, b], b | [c, b]]
+    Yes. This is equivalent because the above statements show a unique solution.
