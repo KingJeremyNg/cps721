@@ -1,5 +1,11 @@
+/*
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+*/
+
 minim([Min | []], Min).
-minim([Head, Body | Tail], Min) :-
+minim([Head, Body, | Tail], Min) :-
     Head =< Body,
     minim([Head | Tail], Min).
 minim([Head, Body | Tail], Min) :-
@@ -23,7 +29,33 @@ constMult([Head | Tail], C, [HeadX | TailX]) :-
     constMult(Tail, C, TailX).
 
 polMult([], Poly, []).
-polMult([Head1 | Tail1], Poly, Product) :-
+polMult([Head | Tail], Poly, Result) :-
+    polMult(Tail, Poly, X),
+    constMult(Poly, Head, MultResult),
+    polAdd(MultResult, [0 | X], Result).
+
+/*
+polMult([2,2,1], [1,2,3], X).
+1) [2,2,1], [1,2,3], X
+2) [2,1], [1,2,3], X
+3) [1], [1,2,3], X
+4) [], _, X = []
+5) GO BACK
+6) [1], [1,2,3], X ->
+    a) constMult([1,2,3], 1, Value)
+    b) polAdd(Value = [1,2,3], X = [0 | []], RESULT)
+    c) RESULT = [1,2,3]
+7) GO BACK
+8) [2,1], [1,2,3], RESULT = [1,2,3]
+    a) constMult([1,2,3], 2, Value)
+    b) polAdd(Value = [2,4,6], X = [0 | RESULT]/[0,1,2,3], RESULT)
+    c) RESULT = [2,5,8,3]
+9) GO BACK
+10) [2,2,1], [1,2,3], RESULT = [2,5,8,3]
+    a) constMult([1,2,3], 2, Value)
+    b) polAdd(Value = [2,4,6], X = [0 | RESULT]/[0,2,5,8,3], RESULT)
+    c) RESULT = [2,6,11,8,3]
+*/
 
 /*
 append ([ ], List, List).

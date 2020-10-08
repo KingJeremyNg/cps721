@@ -1,3 +1,9 @@
+/*
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+*/
+
 1.  [X | [ Y, [a, Y]]] and [a, b, [X | [Y]]]
     [X, Y, [a, Y]] and [a, b, [X, Y]]
     X = a, Y = b
