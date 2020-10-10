@@ -24,23 +24,32 @@ sameValue(Att, [Head], Val) :-
 sameValue(Att, [Head | Tail], Val) :-
     sameValue(Att, Tail, Val), value(Att, Head, Val).
 
-/* divide(Examples, Att, Boolean, Pos, Neg) */
-divide([Head | []], Att, Boolean, [PosH | []], [NegH | []]) :-
-    value(Att, Head, Boolean).
-divide([Head | Tail], Att, Boolean, [PosH | PosT], [NegH | NegT]) :-
-    divide(Tail, Att, Boolean, PosT, NegT),
+divide(Examples, Att, Boolean, Pos, Neg) :-
+    divideHelper(Examples, Att, Boolean, X, Y, [], []),
+    reverse(X, Pos),
+    reverse(Y, Neg).
+
+divideHelper([], _, _, Pos, Neg, Pos, Neg).
+divideHelper([Head | Tail], Att, Boolean, Pos, Neg, PosAcc, NegAcc) :-
     value(Att, Head, Boolean),
-    PosH is Head.
+    divideHelper(Tail, Att, Boolean, Pos, Neg, [Head | PosAcc], NegAcc).
+divideHelper([Head | Tail], Att, Boolean, Pos, Neg, PosAcc, NegAcc) :-
+    checkAttribute(Att, Head, X),
+    not checkBoolean(Att, Head, Boolean),
+    divideHelper(Tail, Att, Boolean, Pos, Neg, PosAcc, [Head | NegAcc]).
+divideHelper([Head | Tail], Att, Boolean, Pos, Neg, PosAcc, NegAcc) :-
+    not checkAttribute(Att, Head, Boolean),
+    not checkBoolean(Att, Head, Boolean),
+    divideHelper(Tail, Att, Boolean, Pos, Neg, PosAcc, NegAcc).
 
-divide1([Head], Att, Boolean, [], [Head]) :- not value(Att, Head, Boolean).
-divide1([Head], Att, Boolean, [Head], []) :- value(Att, Head, Boolean).
+checkBoolean(Att, Example, Boolean) :-
+    value(Att, Example, X),
+    X = Boolean.
+checkAttribute(Att, Example, Boolean) :-
+    value(X, Example, Boolean),
+    X = Att.
 
-/*
-minim([Min | []], Min).
-minim([Head, Body, | Tail], Min) :-
-    Head =< Body,
-    minim([Head | Tail], Min).
-minim([Head, Body | Tail], Min) :-
-    Head > Body,
-    minim([Body | Tail], Min).
-*/
+count(Examples, Att, Bool, T, F) :-
+    divide(Examples, Att, Bool, Pos, Neg),
+    length(Pos, T),
+    length(Neg, F).
