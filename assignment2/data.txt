@@ -1,0 +1,124 @@
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+
+* Same Value *
+
+?- sameValue(debt, [p3, p4, p5, p6, p7, p8, p9], X).
+X = low
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- sameValue(historyK, [p9, p10, p11, p12, p13], X).
+X = good
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- sameValue(historyK, [p8, p9, p10, p11, p12, p13], X).
+No (0.00s cpu)
+
+?- sameValue(historyK, [p2, p3, p4, p5], X).
+No (0.00s cpu)
+
+?- sameValue(hist, [p2, p3, p4, p5], X).
+X = unknown
+Yes (0.00s cpu, solution 1, maybe more)
+
+* Divide *
+
+?- divide([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14], debt, X, Pos, Neg).
+X = high
+Pos = [p1, p2, p10, p11, p12, p13, p14]
+Neg = [p3, p4, p5, p6, p7, p8, p9]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- divide([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14], hist, X, Pos, Neg).
+X = unknown
+Pos = [p2, p3, p4, p5, p6]
+Neg = []
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- divide([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14], historyK, X, Pos, Neg).
+X = bad
+Pos = [p1, p7, p8, p14]
+Neg = [p9, p10, p11, p12, p13]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- divide([p1, p2, p3, p4, p5, p7, p9, p11, p12, p13, p14], collateral, X, Pos, Neg).
+X = none
+Pos = [p1, p2, p3, p4, p5, p7, p9, p11, p12, p13, p14]
+Neg = []
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- divide([p1, p2, p3, p4, p5, p7, p9, p11, p12, p13, p14], collateral, adequate, Pos, Neg).
+Pos = []
+Neg = [p1, p2, p3, p4, p5, p7, p9, p11, p12, p13, p14]
+Yes (0.00s cpu, solution 1, maybe more)
+
+* Count *
+
+?- count([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14], debt, X, T, F).
+X = high
+T = 7
+F = 7
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- count([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14], hist, X, T, F).
+X = unknown
+T = 5
+F = 0
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- count([p1, p7, p8, p9, p10, p11, p12, p13, p14], hist, good, T, F).
+T = 0
+F = 0
+Yes (0.00s cpu)
+
+* Examples *
+
+?- sameValue(debt, [p1, p2, p10, p11, p12, p13, p14], X).
+X = high
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- sameValue(collateral, [p1, p2, p3, p4, p5, p7, p9], X).
+X = none
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- sameValue(collateral, [p5, p6, p7], X).
+No (0.00s cpu)
+
+?- divide([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14], collateral, X, Pos, Neg).
+X = none
+Pos = [p1, p2, p3, p4, p5, p7, p9, p11, p12, p13, p14]
+Neg = [p6, p8, p10]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- divide([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14], collateral, adequate, Pos, Neg).
+Pos = [p6, p8, p10]
+Neg = [p1, p2, p3, p4, p5, p7, p9, p11, p12, p13, p14]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- divide([p1, p2, p10, p11, p12, p13, p14], debt, X, Pos, Neg).
+X = high
+Pos = [p1, p2, p10, p11, p12, p13, p14]
+Neg = []
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- divide([p1, p2, p10, p11, p12, p13, p14], debt, low, Pos, Neg).
+Pos = []
+Neg = [p1, p2, p10, p11, p12, p13, p14]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- divide([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14], historyK, good, Pos, Neg).
+Pos = [p9, p10, p11, p12, p13]
+Neg = [p1, p7, p8, p14]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- count([p1, p2, p10, p11, p12, p13, p14], debt, X, T, F).
+X = high
+T = 7
+F = 0
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- count([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14], historyK, good, T, F).
+T = 5
+F = 4
+Yes (0.00s cpu, solution 1, maybe more)

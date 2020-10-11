@@ -1,0 +1,45 @@
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+
+* Minimum Predicate *
+
+?- minim([29, 1, 8, 167], X).
+X = 1
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- minim([12, 123, 456, 12, 78, 999, 123, 12], X).
+X = 12
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- minim([13, 47, 79, 81, 24], 24).
+No (0.00s cpu)
+
+?- minim([13, 47, 79, 81, 24], 13).
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- minim([13, 47, 79, 81, 24], X).
+X = 13
+Yes (0.00s cpu, solution 1, maybe more
+
+* Polynomial Multiplication *
+
+?- polMult([1, 1], [1, 1], X).
+X = [1, 2, 1]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- polMult([1, 1], [1, -1], X).
+X = [1, 0, -1]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- polMult([1, 1], [1, 0, -1], X).
+X = [1, 1, -1, -1]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- polMult([1,2,-1],[1,-2,1],X).
+X = [1, 0, -4, 4, -1]
+Yes (0.00s cpu, solution 1, maybe more)
+
+?- polMult([1, 3, 3, -1], [1, 0, 1], X). (1 + 3x + 3x^2 - x^3) * (1 + x^2)
+X = [1, 3, 4, 2, 3, -1] (-x^5 + 3x^4 + 2x^3 + 4x^2 + 3x+1)
+Yes (0.00s cpu, solution 1, maybe more)
