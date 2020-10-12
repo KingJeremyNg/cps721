@@ -10,9 +10,7 @@ Elijah Tungul, 500885285, Section 5
     Yes, by simplifying the initial statements we can find the same pattern.
 
 2.  [X, [a, Y | V]] and [V, [X, d, a]]
-    [X, [a, Y, V]] and [V, [X, d, a]]
-    X = a, V = a, Y = d
-    Yes, by simplifying the initial statements we can find a similar pattern.
+    No, cannot simplify LHS or RHS. Element #2 is a mismatch because V can be 0+ elements.
 
 3.  [[q, p | [r, s]], []] and [X | Y]
     [[q, p, r, s], []] and [X | Y]
