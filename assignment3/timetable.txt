@@ -1,0 +1,142 @@
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+
+[eclipse 45]: [timetable].
+File timetable.pl, line 96: Singleton variable Day
+File timetable.pl, line 96: Singleton variable Hour
+File timetable.pl, line 96: Singleton variable Room
+File timetable.pl, line 97: Singleton variable Room1
+File timetable.pl, line 98: Singleton variable Room2
+File timetable.pl, line 103: Singleton variable X
+File timetable.pl, line 103: Singleton variable Y
+File timetable.pl, line 111: Singleton variable Hour1
+File timetable.pl, line 111: Singleton variable Room1
+File timetable.pl, line 111: Singleton variable Hour2
+File timetable.pl, line 111: Singleton variable Room2
+timetable.pl compiled 26272 bytes in 0.03 seconds
+
+Yes (0.03s cpu)
+[eclipse 46]: print_solution(List).
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[mon, 9, r4], [mon, 10, r4], [mon, 11, r4]]
+Program runtime: 5.140625
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[mon, 9, r4], [mon, 10, r4], [mon, 11, r4]]]
+Yes (5.14s cpu, solution 1, maybe more) ? ;
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[mon, 10, r4], [mon, 11, r4], [mon, 12, r4]]
+Program runtime: 5.21875
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[mon, 10, r4], [mon, 11, r4], [mon, 12, r4]]]
+Yes (5.22s cpu, solution 2, maybe more) ? ;
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[mon, 11, r3], [mon, 12, r3], [mon, 1, r3]]
+Program runtime: 5.28125
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[mon, 11, r3], [mon, 12, r3], [mon, 1, r3]]]
+Yes (5.28s cpu, solution 3, maybe more) ? ;
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[mon, 12, r3], [mon, 1, r3], [mon, 2, r3]]
+Program runtime: 5.328125
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[mon, 12, r3], [mon, 1, r3], [mon, 2, r3]]]
+Yes (5.33s cpu, solution 4, maybe more) ? ;
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[mon, 1, r2], [mon, 2, r2], [mon, 3, r2]]
+Program runtime: 5.375
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[mon, 1, r2], [mon, 2, r2], [mon, 3, r2]]]
+Yes (5.38s cpu, solution 5, maybe more) ? ;
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[mon, 1, r3], [mon, 2, r3], [mon, 3, r3]]
+Program runtime: 5.390625
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[mon, 1, r3], [mon, 2, r3], [mon, 3, r3]]]
+Yes (5.39s cpu, solution 6, maybe more) ? ;
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[mon, 2, r1], [mon, 3, r1], [mon, 4, r1]]
+Program runtime: 5.421875
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[mon, 2, r1], [mon, 3, r1], [mon, 4, r1]]]
+Yes (5.42s cpu, solution 7, maybe more) ? ;
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[mon, 2, r2], [mon, 3, r2], [mon, 4, r2]]
+Program runtime: 5.4375
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[mon, 2, r2], [mon, 3, r2], [mon, 4, r2]]]
+Yes (5.44s cpu, solution 8, maybe more) ? ;
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[mon, 2, r3], [mon, 3, r3], [mon, 4, r3]]
+Program runtime: 5.453125
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[mon, 2, r3], [mon, 3, r3], [mon, 4, r3]]]
+Yes (5.45s cpu, solution 9, maybe more) ? ;
+
+****************************************************************
+AI course is scheduled on [[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]]
+Operating Systems course is scheduled on [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]]
+Networks course is scheduled on [[mon, 11, r1], [tues, 10, r3]]
+Data structures course is scheduled on [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]]
+Algorithms course is scheduled on [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]]
+Web design course is scheduled on [[tues, 9, r4], [tues, 10, r4], [tues, 11, r4]]
+Program runtime: 5.6875
+
+List = [[[mon, 9, r3], [mon, 10, r3], [tues, 9, r2], [tues, 10, r2]], [[mon, 9, r2], [mon, 10, r2], [tues, 9, r3]], [[mon, 11, r1], [tues, 10, r3]], [[mon, 9, r1], [mon, 10, r1], [tues, 9, r1]], [[mon, 11, r2], [mon, 12, r2], [tues, 10, r1]], [[tues, 9, r4], [tues, 10, r4], [tues, 11, r4]]]
+Yes (5.69s cpu, solution 10, maybe more) ? .
+Type ; for more solutions, otherwise <return> ?
+[eclipse 47]:

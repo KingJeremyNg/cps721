@@ -1,0 +1,35 @@
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+
+Interleaving of generate and test
+?- Start is cputime, solve1(List), End is cputime, Time is End - Start.
+
+Start = 0.4375
+List = [17, 4, 10, 20, 10, 17, 4, 20]
+End = 0.578125
+Time = 0.140625
+Yes (0.14s cpu, solution 1, maybe more)
+
+?- print_solution(List).
+Peter is on floor 17.
+Romeo is on floor 4.
+Sam is on floor 10.
+Tom is on floor 20.
+Accountant is on floor 10.
+Businessman is on floor 17.
+Computer Scientist is on floor 4.
+Dentist is on floor 20.
+Computation time: 0.140625.
+
+List = List
+Yes (0.14s cpu, solution 1, maybe more)
+
+Generate and test
+?- Start is cputime, solve2(List), End is cputime, Time is End - Start.
+
+Start = 0.71875
+List = [17, 4, 10, 20, 10, 17, 4, 20]
+End = 484.8125
+Time = 484.09375
+
