@@ -1,0 +1,230 @@
+?-  account(Number, Name, rbc, Balance),
+    lives(Name, richmondHill),
+    gender(Name, male).
+
+?-  account(Number1, Name, cibc, Balance1),
+    account(Number2, Name, cibc, Balance2),
+    Number1 \= Number2,
+    lives(Name, City),
+    location(City, canada).
+
+?-  location(Bank, toronto).
+
+?-  account(Number, Name, bmo, Amount),
+    lives(Name, scarborough).
+
+?-  lives(Name1, City1),
+    lives(Name2, City2),
+    location(City1, canada),
+    location(City2, canada),
+    location(Bank, City1),
+    location(Bank, City2),
+    account(Number1, Name1, Bank, Balance1),
+    account(Number2, Name2, Bank, Balance2),
+    Number1 \= Number2,
+    Name1 \= Name2.
+
+?-  location(City, usa).
+
+/* GIVEN PHRASES */
+
+(... = repetitions)
+
+?- what([a, city, in, canada], X).
+X = markham
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = scarborough
+Yes (0.00s cpu, solution 26, maybe more)
+...
+X = richmondHill
+Yes (0.00s cpu, solution 51, maybe more)
+...
+X = toronto
+Yes (0.02s cpu, solution 76, maybe more)
+...
+X = brampton
+Yes (0.02s cpu, solution 101, maybe more)
+...
+
+?- what([the, canadian, man, with, a, large, account, in, a, local, bank], X).
+X = adam
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = adam
+Yes (0.03s cpu, solution 100, maybe more)
+...
+
+?- what([any, foreign, male, person, with, a, small, account, in, a, canadian, bank], X).
+X = jeremy
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = jeremy
+Yes (0.03s cpu, solution 128, maybe more)
+...
+
+?- what([a, foreign, male, person, from, losAngeles, with, a, small, account, in, rbc], X).
+X = eyho
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = eyho
+Yes (0.00s cpu, solution 90, maybe more)
+No (0.00s cpu)
+
+?- what([a, balance, of, a, large, account, in, a, local, bank], X).
+X = 15000
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = 10200
+Yes (0.00s cpu, solution 13, maybe more)
+...
+
+?- what([any, local, bank, with, an, account, of, a, man, from, usa], X).
+X = mcu
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = rbc
+Yes (0.05s cpu, solution 97, maybe more)
+...
+
+?- what([an, owner, from, canada, of, a, large, account], X).
+X = adam
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = xing
+Yes (0.00s cpu, solution 6, maybe more)
+...
+X = xing
+Yes (0.00s cpu, solution 10, maybe more)
+No (0.00s cpu)
+
+?- what([a, woman, from, markham, with, a, medium, account], X).
+X = ann
+Yes (0.00s cpu, solution 1, maybe more)
+X = ann
+Yes (0.00s cpu, solution 2, maybe more)
+X = ann
+Yes (0.00s cpu, solution 3, maybe more)
+No (0.00s cpu)
+
+?- what([a, bank, in, canada, with, a, small, account, of, a, foreign, person], X).
+X = rbc
+Yes (0.03s cpu, solution 1, maybe more)
+...
+
+?- what([a, medium, account, in, a, canadian, bank, with, a, small, account, of, an, american], X).
+X = 13
+Yes (0.14s cpu, solution 1, maybe more)
+...
+
+?- what([the, balance, of, the, medium, account, in, mcu, of, a, woman, from, markham], X).
+X = 2505
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = 2505
+Yes (0.00s cpu, solution 20, maybe more)
+No (0.00s cpu)
+
+?- what([a, balance, of, an, account, of, an, american, with, a, small, account, in, a, local, bank, with, ...], X).
+X = 500
+Yes (0.08s cpu, solution 1, maybe more)
+...
+
+/* NEW PHRASES */
+
+(... = repetitions)
+
+?- what([a, person, from, canada], X).
+X = ann
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = robert
+Yes (0.02s cpu, solution 6, maybe more)
+...
+X = philip
+Yes (0.02s cpu, solution 11, maybe more)
+X = jose
+Yes (0.02s cpu, solution 16, maybe more)
+...
+X = elijah
+Yes (0.03s cpu, solution 21, maybe more)
+...
+X = christian
+Yes (0.03s cpu, solution 26, maybe more)
+...
+X = adam
+Yes (0.03s cpu, solution 31, maybe more)
+...
+X = jason
+Yes (0.03s cpu, solution 36, maybe more)
+...
+X = michelle
+Yes (0.03s cpu, solution 41, maybe more)
+...
+X = parth
+Yes (0.03s cpu, solution 51, maybe more)
+...
+X = xing
+Yes (0.03s cpu, solution 56, maybe more)
+...
+
+?- what([a, person, from, usa, with, a, large, account], X).
+X = miguel
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = miguel
+Yes (0.00s cpu, solution 6, maybe more)
+No (0.00s cpu)
+
+?- what([a, woman, from, canada, with, a, medium, account, in, a, bank, with, a, large, account], X).
+X = ann
+Yes (0.00s cpu, solution 1, maybe more)
+...
+
+?- what([a, local, male, with, a, recent, account], X).
+X = parth
+Yes (0.00s cpu, solution 1, maybe more)
+X = parth
+Yes (0.00s cpu, solution 2, maybe more)
+X = parth
+Yes (0.00s cpu, solution 3, maybe more)
+No (0.00s cpu)
+
+?- what([a, foreign, man, with, an, old, account, in, a, bank, in, toronto], X).
+X = jeremy
+Yes (0.00s cpu, solution 1, maybe more)
+...
+
+?- what([a, balance, in, a, recent, account, in, bmo], X).
+X = 5000
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = 5000
+Yes (0.02s cpu, solution 30, maybe more)
+No (0.02s cpu)
+
+?- what([any, account, of, an, american, with, a, bank, in, losAngeles], X).
+X = 21
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = 21
+Yes (0.00s cpu, solution 16, maybe more)
+No (0.00s cpu)
+
+?- what([a, medium, account, in, a, bank, in, canada, with, a, large, account], X).
+X = 12
+Yes (0.09s cpu, solution 1, maybe more)
+...
+
+?- what([any, local, bank, with, an, medium, account, of, a, female], X).
+X = mcu
+Yes (0.00s cpu, solution 1, maybe more)
+...
+X = cibc
+Yes (0.02s cpu, solution 49, maybe more)
+...
+
+?- what([any, large, account, of, an, owner, from, hanoi], X).
+X = 18
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
