@@ -1,0 +1,61 @@
+Factory.txt
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+
+
+1. WITHOUT USELESS PREDICATE HEURISTIC
+(... = repetition)
+
+?- solve_problem(7, Plan).
+Plan = [bolt(b, a), paint(b, blue), paint(a, green), drill(b), drill(a), shape(a), shape(b)]
+Yes (14.98s cpu, solution 1, maybe more)
+...
+Plan = [bolt(a, b), paint(b, blue), paint(a, green), drill(b), drill(a), shape(a), shape(b)]
+Yes (14.98s cpu, solution 33, maybe more)
+...
+Plan = [bolt(b, a), paint(b, blue), paint(a, green), drill(b), drill(a), shape(a), shape(b)]
+Yes (15.02s cpu, solution 65, maybe more)
+...
+Plan = [bolt(a, b), paint(b, blue), paint(a, green), drill(b), drill(a), shape(a), shape(b)]
+Yes (15.02s cpu, solution 97, maybe more)
+...
+Plan = [bolt(a, b), paint(a, green), paint(b, blue), drill(a), drill(b), shape(b), shape(a)]
+Yes (15.02s cpu, solution 129, maybe more)
+...
+Plan = [bolt(a, b), paint(a, green), paint(b, blue), drill(a), drill(b), shape(b), shape(a)]
+Yes (15.05s cpu, solution 193, maybe more)
+...
+Plan = [bolt(a, b), paint(b, blue), paint(a, green), drill(a), drill(b), shape(b), shape(a)]
+Yes (15.06s cpu, solution 257, maybe more)
+...
+Plan = [bolt(b, a), paint(b, blue), paint(a, green), drill(a), drill(b), shape(b), shape(a)]
+Yes (15.08s cpu, solution 353, maybe more)
+...
+Plan = [bolt(b, a), paint(a, green), paint(b, blue), drill(b), drill(a), shape(a), shape(b)]
+Yes (15.08s cpu, solution 385, maybe more)
+...
+
+There are many different solutions to this problem because there are many different permutations
+of the solution, but overall they lead to the same place. 
+The order of identical predicates can be interchanged; for example, you can paint 'a' then 'b', or 'b' then 'a'.
+The results were not quickly computed (as it took around 14s for the program to finish running).
+
+2. WITH USELESS PREDICATE HEURISTIC
+(... = repetition)
+
+Plan = [bolt(b, a), paint(b, blue), drill(b), paint(a, green), drill(a), shape(a), shape(b)]
+Yes (1.17s cpu, solution 1, maybe more)
+...
+Plan = [bolt(a, b), paint(b, blue), drill(b), paint(a, green), drill(a), shape(a), shape(b)]
+Yes (1.17s cpu, solution 33, maybe more)
+...
+Plan = [bolt(b, a), paint(b, blue), drill(b), paint(a, green), drill(a), shape(a), shape(b)]
+Yes (1.19s cpu, solution 65, maybe more)
+...
+
+
+With the useless predicate heuristic, the program took a fraction of the time to run.
+The number of solutions do not change though (which makes sense), since the problem should have the same solutions no matter what.
+
+Computer used was a MacBook Air, 1.4 GHz Dual-Core Intel Core i5, 8 GB 1600 MHz DDR3

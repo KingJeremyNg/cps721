@@ -1,0 +1,31 @@
+/*-------------- QUIZ 9 ----------------- */
+
+There are 3 full glasses of water and 3 empty glasses arranged on the desk as
+F E F E F E
+The problem is to find a sequence of 3 swap actions, that swap 2 glasses
+at a time, so that all full glasses will be in the beginning and all empty
+glasses will be at the end.
+
+Actions: there is only one action swap(P1,P2) that swaps a glass at position P1
+with another glass at position P2. This is possible if P1 and P2 are adjacent,
+i.e,, if P2 is P1+1, and one of the glasses is full with water and another is empty.
+
+Fluents:
+full(P,S) - a full glass of water is at a position P in situation S.
+empty(P,S) - an empty glass of water is at a position P in situation S
+
+(A) Write recondition rules (hint: you have to write 2 rules since the left glass can be either full or empty).
+
+(B) Write successor state axioms
+
+(C) What kind of rules for predicate  useless(M, ListofActs) will help in this example?
+
+Run your program to solve the specific instance given to you. Use the following initial and goal states.
+
+                      /* Initial state */
+full(1, [ ]). full(3, [ ]). full(5, [ ]).
+empty(2,[ ]). empty(4,[ ]). empty(6,[ ]).
+
+                      /* Goal state */
+
+goal_state(S) :-  full(1,S), full(2,S), full(3,S), empty(4,S), empty(5,S), empty(6,S).

@@ -1,0 +1,105 @@
+Log.txt
+Jeremy Ng, 500882192, Section 2
+Jose Manipon, 500906166, Section 4
+Elijah Tungul, 500885285, Section 5
+
+
+goal_state(S) :- in(bigBox1,gmc,S).
+
+solve_problem(2, Plan).
+
+Elapsed time (sec): 0.0
+
+Plan = [load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+No (0.00s cpu)
+
+
+
+goal_state(S) :- at(bigBox1,stJohnAirport,S).
+
+solve_problem(3, Plan).                        
+
+Elapsed time (sec): 0.0
+
+Plan = [load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.00s cpu, solution 1, maybe more) ? ;
+
+Elapsed time (sec): 0.01
+
+Plan = [load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn), load(bigBox4, volvo, univOfTor)]
+Yes (0.01s cpu, solution 2, maybe more) ? ;
+
+Elapsed time (sec): 0.01
+
+Plan = [load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn), drive(daimler, pearsonAirport, ryerson, toronto)]
+Yes (0.01s cpu, solution 3, maybe more) ? ;
+
+Elapsed time (sec): 0.02
+
+Plan = [load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn), drive(ford, yvrAirport, univBritishColumbia, vancouver)]
+Yes (0.02s cpu, solution 4, maybe more) ? ;
+
+Elapsed time (sec): 0.02
+
+Plan = [load(bigBox4, volvo, univOfTor), load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.02s cpu, solution 5, maybe more) ? ;
+
+Elapsed time (sec): 0.02
+
+Plan = [drive(daimler, pearsonAirport, ryerson, toronto), load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.02s cpu, solution 6, maybe more) ? ;
+
+Elapsed time (sec): 0.02
+
+Plan = [drive(ford, yvrAirport, univBritishColumbia, vancouver), load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.02s cpu, solution 7, maybe more) ? ;
+
+Elapsed time (sec): 0.02
+
+Plan = [drive(gmc, memorialUnivNewfoundland, stJohnAirport, stJohn), load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.02s cpu, solution 8, maybe more) ? ;
+
+Elapsed time (sec): 0.02
+
+Plan = [load(bigBox1, gmc, memorialUnivNewfoundland), load(bigBox4, volvo, univOfTor), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.02s cpu, solution 9, maybe more) ? ;
+
+Elapsed time (sec): 0.02
+
+Plan = [load(bigBox1, gmc, memorialUnivNewfoundland), drive(daimler, pearsonAirport, ryerson, toronto), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.02s cpu, solution 10, maybe more) ? ;
+
+Elapsed time (sec): 0.02
+
+Plan = [load(bigBox1, gmc, memorialUnivNewfoundland), drive(ford, yvrAirport, univBritishColumbia, vancouver), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.02s cpu, solution 11, maybe more) ? ;
+
+No (0.03s cpu)
+
+
+
+solve_problem(5, Plan).
+
+Elapsed time (sec): 0.46
+
+Plan = [load(bigBox1, boeing747, stJohnAirport), unload(bigBox1, gmc, stJohnAirport), drive(gmc, memorialUnivNewfoundland, stJohnAirport, stJohn), load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.46s cpu, solution 1, maybe more) ? ;
+
+Elapsed time (sec): 0.46
+
+Plan = [load(bigBox1, boeing747, stJohnAirport), unload(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, memorialUnivNewfoundland, stJohnAirport, stJohn), load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.46s cpu, solution 2, maybe more) ? ;
+
+Elapsed time (sec): 0.46
+
+Plan = [load(bigBox1, boeing747, stJohnAirport), unload(bigBox1, gmc, stJohnAirport), drive(gmc, memorialUnivNewfoundland, stJohnAirport, stJohn), load(bigBox1, gmc, memorialUnivNewfoundland), drive(gmc, stJohnAirport, memorialUnivNewfoundland, stJohn)]
+Yes (0.46s cpu, solution 3, maybe more) ? ;
+
+No (0.57s cpu)
+
+
+Goal states with higher upper bound steps take more time to produce because a lot more cases need to be accounted for
+
+Computer used was a MacBook Air, 1.4 GHz Dual-Core Intel Core i5, 8 GB 1600 MHz DDR3
